@@ -1,0 +1,10 @@
+<ol class="publication-list">
+  {% for publication in include.publications %}
+  <li>
+    <h3>{{ publication.title | escape }}</h3>
+    <p>{{ publication.authors | escape | replace: 'Junteng Liu', '<strong>Junteng Liu</strong>' }}<br>
+    <em>{{ publication.venue | escape }} {{ publication.year }}</em> · {{ publication.role | escape }}{% if publication.code_note %}<br>
+    {{ publication.code_note | escape }}{% endif %}</p>
+  </li>
+  {% endfor %}
+</ol>
